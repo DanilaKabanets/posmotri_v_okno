@@ -9,8 +9,9 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -53,56 +54,65 @@ ol {
 .content {
   display: flex;
   align-items: flex-end;
-  gap:30px;
+  gap: 30px;
   width: 1140px;
 }
+
 .result {
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
+  row-gap: 16px;
   width: 711px;
-  height: 456px;
 }
+
 .result__video-container {
   position: relative;
   width: 711px;
   height: 386px;
 }
+
 .result__video {
   object-fit: cover;
   object-position: center;
   width: 100%;
   height: 100%;
 }
-.search-form { 
+
+.search-form {
   display: flex;
-  align-items: flex-start;
+  align-items:  start;
   gap: 40px;
 }
+
 .search-form__fieldset {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
+
 .search-form__fieldset-title {
-  margin-bottom: 5px;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: 18px;
 }
+
 .search-form__label {
   display: flex;
   align-items: center;
   gap: 5px;
   cursor: pointer;
 }
+
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
+
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
+
 .search-form__textfield {
   border: none;
   border-top: 1px solid currentColor;
@@ -113,21 +123,24 @@ ol {
   padding: 2px 0;
   font-weight: 400;
   font-size: 18px;
-  inline-size: 225px;
+  min-inline-size: 225px;
 }
+
 .search-form__textfield::placeholder {
   font-size: 18px;
 }
+
 .search-form__textfield:focus {
   outline: none;
 }
+
 .search-form__checkbox-list {
-  display: flex;
+  display: flex;  
   justify-content: space-between;
-  align-items: start;
-  width: 212px;
-  height: 49px;
+  align-items: center;
+  min-width: 212px;
 }
+
 .search-form__pseudo-checkbox {
   display: flex;
   align-items: center;
@@ -137,7 +150,7 @@ ol {
   height: 19px;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+.search-form__checkbox:checked+.search-form__pseudo-checkbox::before {
   content: "";
   display: flex;
   background: #fff;
@@ -157,6 +170,7 @@ ol {
   width: 399px;
   height: 34px;
 }
+
 .button:hover {
   text-decoration: underline;
 }
@@ -168,54 +182,56 @@ ol {
 .button:focus {
   outline: none;
 }
+
 .button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
+
 .search-form__submit-button {
-  align-self: center;
+  align-self: flex-end;
   inline-size: 194px;
 }
+
 .content__details {
   display: flex;
   flex-direction: column;
-  gap: 21px;
+  gap: 26px;
   align-self: flex-start;
   width: 399px;
-  height: 534px;
 }
+
 .title {
-  margin-top: 3px;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 75px;
   font-style: normal;
-  line-height:0.94;
+  line-height: 0.94;
   text-transform: uppercase;
 }
+
 .content__accent {
   color: #545050;
 }
+
 .content__list {
   position: relative;
   width: 399px;
   height: 298px;
-  overflow-y: scroll;
-  scrollbar-width: none;
-}
-
-.content__list::-webkit-scrollbar {
-  display: none;
+  overflow-y: auto;
 }
 
 .content__list-item:not(:last-child) {
   margin: 0 0 32px;
 }
+
 .content__card-link {
+  margin: 2px;
   display: block;
-  color:#fff;
+  color: #fff;
   text-decoration: none;
 }
+
 .content__card-link:focus {
   outline: none;
 }
@@ -242,26 +258,34 @@ ol {
   align-items: flex-start;
   padding: 2px;
   width: 394px;
-  height: 107px;
+  min-height: 107px;
 }
+
 .content__video-card-description-container {
   flex-grow: 1;
 }
+
 .content__video-card-title {
-  padding: 2px 2px 5px;
+  margin-block-end: 6px;
   color: #fff;
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-size: 30px;
   font-weight: 700;
   line-height: 1;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  overflow: hidden;
+  max-width: 200px;
 }
+
 .content__video-card-description {
   padding: 0 2px;
   color: #FFF;
   font-weight: 400;
   line-height: 16.2px;
 }
+
 .content__video-card-thumbnail {
   inline-size: 194px;
   block-size: 103px;
